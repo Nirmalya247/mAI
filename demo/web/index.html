@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script src="/web/tools/jquery.js"></script>
+		<script src="/web/tools/common.js"></script>
+		<script src="/web/tools/pageManager.js"></script>
+		<script src="/web/tools/htmlBind.js"></script>
+		<script>
+			pageManager.linkList = [
+				{path: '/web/pages/bootstrap/bootstrap.js', name: 'bootstrap'},
+				{path: '/web/pages/home/home.js', name: 'home'},
+				{path: '/web/pages/tensorTest/tensorTest.js', name: 'tensorTest'},
+				{path: '/web/pages/mTest/mTest.js', name: 'mTest'},
+
+				{path: '/web/pages/test/test3.js', name: 'test'}
+			];
+			pageManager.project = 'test';
+			pageManager.defaultPage = 'mTest';
+			pageManager.bootstrap = 'bootstrap';
+            $(window).on("popstate", function() {
+                pageManager.checkURL();
+			});
+		</script>
+	</head>
+	<body onload="pageManager.checkURL();">
+	</body>
+</html>
